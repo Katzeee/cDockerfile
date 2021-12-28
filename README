@@ -1,0 +1,2 @@
+docker build -t jiangfengxi/ubuntu-gxx .
+docker run -d --name myubuntuc -e "PASSWD=xjfXJF110" -p 80:8080 jiangfengxi/ubuntu-gxx
