@@ -1,4 +1,4 @@
-FROM jmcdice/vscode-server
+FROM linuxserver/code-server:latest
 
 LABEL maintainer="jiangfegnxi.c@gmail.com"
 
@@ -7,7 +7,15 @@ RUN sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu\//http:\/\/mirrors.163.com\/ub
 # 确保man指令可用
     && rm /etc/dpkg/dpkg.cfg.d/excludes \ 
     && apt-get update \
-    && apt-get install -y build-essential \
-    && apt-get install -y gcc-multilib \
-    && apt-get install -y gdb
+    && apt-get install build-essential -y \
+    && apt-get install man -y \
+    && apt-get install gcc-doc -y \
+    && apt-get install gdb -y \
+    && apt-get install git -y \
+    && apt-get install libreadline-dev -y \
+    && apt-get install libsdl2-dev -y \
+    && apt-get install llvm -y \
+    && apt-get install vim -y
+
+
 
